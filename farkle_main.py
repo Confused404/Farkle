@@ -14,7 +14,15 @@ def main():
 
     roll_button = Button(window,
                          text="Roll",
-                         command= )
+                         command= rolling_dice,
+                         font=('comic sans', 20),
+                         bg="red",
+                         fg="white",
+                         activebackground="red",
+                         activeforeground="white",
+                         relief="raised",
+                         bd=5,
+                        )
 
     window.mainloop()
 
