@@ -17,7 +17,7 @@ def rolling_dice():
     return dibutton_list
 
 def create_di(di):
-    di_button = Button(window, command=select, height=120, width=120)
+    di_button = Button(window, command=select, height=80, width=80)
     di_button.image = PhotoImage(file=("diface" + str(di.number) + ".png"))
     di_button.config(image=di_button.image, compound='top')
     di_button.pack()
