@@ -1,23 +1,32 @@
 from tkinter import *
 import time
-import die as di # die.py
+import Die as di # die.py
+import Bank as bonk
 
 global window
 
-def select():
-    print("button works")
+playerBank = bonk.bank()
+gameBank = bonk.bank()
+
+global dicount
+dicount = 6
+
+def select(di):
+    if di.special == False: #2, 3, 4, 6 havent finished this if yet
+        return 
+    else: # 1, 5
+        return 
 
 def rolling_dice():
-    di_list = []
     dibutton_list = []
-    for i in range(0, 6):
-        di_list.append(di.Die())
-        print(di_list[i].number)
-        dibutton_list.append(create_di(di_list[i]))
+    for i in range(0, dicount):
+        tempdi = di.Die()
+        dibutton_list.append(create_di(tempdi))
+        print(tempdi.number)
     return dibutton_list
 
 def create_di(di):
-    di_button = Button(window, command=select, height=80, width=80, bg='black')
+    di_button = Button(window, command=lambda: select(di), height=80, width=80, bg='black')
     di_button.image = PhotoImage(file=("diface" + str(di.number) + ".png"))
     di_button.config(image=di_button.image, compound='top')
     di_button.pack()

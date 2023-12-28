@@ -1,5 +1,6 @@
 import random
 
+
 class Die:
     number = 0
     special = False
@@ -23,5 +24,6 @@ class Die:
             return 50
         else:
             return 100
+
 
     
